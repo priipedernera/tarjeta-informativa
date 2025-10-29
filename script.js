@@ -45,3 +45,18 @@ console.log("Objeto productosInventario:", productosInventario);
 Object.entries(productosInventario).forEach(([clave, valor]) => {
   console.log(`El ${clave} tiene un stock de ${valor}.`);
 });
+// ------------------------
+// Ejercicio 1: Seleccionar un elemento y modificarlo
+// ------------------------
+
+// Seleccionamos el título de la tarjeta usando querySelector
+const titulo = document.querySelector(".card__title");
+
+// Modificamos su texto
+titulo.textContent = "Tarjeta modificada con JavaScript";
+
+// También podemos cambiar el color desde JS
+titulo.style.color = "#06a884";
+
+// Y mostrar un mensaje en consola para confirmar
+console.log("El título fue modificado correctamente.");
