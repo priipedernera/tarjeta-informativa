@@ -1,0 +1,80 @@
+/* Reset sencillo */
+/* Contenedor principal: usamos Flexbox para centrar todo */
+.page {
+min-height: 100vh; /* ocupa toda la altura de la ventana */
+display: flex;
+align-items: center; /* centrado vertical */
+justify-content: center; /* centrado horizontal */
+background: linear-gradient(180deg, #f6fbf9 0%, #e9f7f2 100%);
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+padding: 24px;
+}
+
+
+/* Card */
+.card {
+width: 360px;
+max-width: 100%;
+background: #ffffff;
+border-radius: 12px;
+box-shadow: 0 6px 20px rgba(12, 40, 25, 0.08);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+gap: 16px;
+padding: 18px;
+transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+
+.card:hover {
+transform: translateY(-6px);
+box-shadow: 0 12px 28px rgba(12, 40, 25, 0.12);
+}
+
+
+/* Imagen: si no tenés imagen real, usamos un cuadrado de color */
+.card__image {
+width: 100%;
+aspect-ratio: 1 / 1; /* cuadrado perfecto */
+border-radius: 8px;
+background: linear-gradient(135deg,#06a884,#54c2aa); /* colores agradables */
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: 700;
+font-size: 22px;
+}
+
+
+.card__title {
+font-size: 20px;
+line-height: 1.2;
+color: #08332a;
+}
+
+
+.card__text {
+font-size: 14px;
+color: #324b46;
+line-height: 1.4;
+}
+
+
+.card__body { display: flex; flex-direction: column; gap: 8px; }
+
+
+/* Media query: para pantallas menores a 768px cambiar fondo y tamaño de texto */
+@media (max-width: 768px) {
+.page {
+background: linear-gradient(180deg, #fff7f0 0%, #fff1e6 100%);
+}
+
+
+.card__title { font-size: 18px; }
+.card__text { font-size: 15px; }
+
+
+.card { width: 92%; padding: 16px; }
+}
