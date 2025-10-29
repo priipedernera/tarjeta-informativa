@@ -1,22 +1,47 @@
+// ------------------------
 // Tarea 1: Identificación de Scope (Ámbito)
+// ------------------------
 
-// 1. const nombre
 const nombre = "Priscila";
 console.log("Nombre:", nombre);
 
-// Intentar reasignar un valor (esto causará error si se descomenta)
-// nombre = "Otro nombre"; // ❌ TypeError: Assignment to constant variable.
+// Intentar reasignar un valor (esto causa error si se descomenta)
+// nombre = "Otro nombre";
 
-// 2. var contador dentro de un bloque if
 if (true) {
   var contador = 50;
   console.log("Dentro del bloque (var contador):", contador);
 }
-console.log("Fuera del bloque (var contador):", contador); // ✅ accesible (scope global)
+console.log("Fuera del bloque (var contador):", contador);
 
-// 3. let mensaje dentro de un bloque if
 if (true) {
   let mensaje = "Variable de bloque";
   console.log("Dentro del bloque (let mensaje):", mensaje);
 }
-console.log("Fuera del bloque (let mensaje):", mensaje); // ❌ ReferenceError
+try {
+  console.log("Fuera del bloque (let mensaje):", mensaje);
+} catch (error) {
+  console.log("Error al acceder a 'mensaje' fuera del bloque:", error.message);
+}
+
+// ------------------------
+// Tarea 2A: Creación de Objeto Dinámico (for y Objetos)
+// ------------------------
+
+let productosInventario = {};
+
+for (let i = 1; i <= 5; i++) {
+  let clave = `producto_${i}`; // clave dinámica
+  let valor = i * 10;          // valor = índice * 10
+  productosInventario[clave] = valor;
+}
+
+console.log("Objeto productosInventario:", productosInventario);
+
+// ------------------------
+// Tarea 2B: Iteración sobre Claves y Valores (forEach)
+// ------------------------
+
+Object.entries(productosInventario).forEach(([clave, valor]) => {
+  console.log(`El ${clave} tiene un stock de ${valor}.`);
+});
